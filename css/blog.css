@@ -51,14 +51,51 @@
 .single-post-image{
    
     height: 16rem;
-   
+    max-height: 16.5rem;
+   position: relative;
     margin-bottom: 1rem;
 }
-.single-post-image img{
+.single-post-img{
     width: 100%;
     height: 100%;
     border-radius: 1.6rem;
     object-fit: cover;
+}
+.caption{
+    position: absolute;
+    right: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    bottom: 0.2rem;
+    background-color: rgba(0,0,0, 0.5);
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    background-color: rgb(240, 240, 240);
+    border-bottom: 1px solid #fff;
+    padding: 1rem;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.icon{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.icon:hover{
+    scale: 1.1;
 }
 .side-content{
     padding: 1rem;
@@ -82,7 +119,7 @@
     background-color: lightgray;
 }
 .related-post img{
-   
+   width: 100%;
     border-radius: 0.6rem;
     height: 100%;
 
@@ -103,23 +140,6 @@
     margin-bottom: 0.2rem;
 }
 
-@media (width < 75rem){
-    .single-post{
-        grid-template-columns: 1fr;
-    }
-   .side-content{
-display: grid; 
-grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
-
-
-}
-.related-post{
-    grid-template-rows: 14rem;
-}
-.more-info{
-    display: none;
-}
-}
 .our-authors{
     display: flex;
     flex-wrap: wrap;
@@ -141,14 +161,49 @@ grid-template-columns: repeat(auto-fill,minmax(20rem,1fr));
     object-fit: cover;
 }
 
-@media (width < 50rem){
+@media screen and (max-width:960px) {
     .single-post{
-        padding: 15vh 0.4rem;
+        grid-template-columns: 1fr;
+    }
+    .more-info{
+        display: block;
     }
     
 }
-@media (width < 23rem){
+
+@media screen and (max-width:640px) {
     .single-post{
-        padding: 15vh 0.2rem;
+        padding: 15vh 1rem;
+        grid-template-columns: 1fr;
+    }
+    .post-detail{
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    .single-post-title{
+        font-size: 1.2rem;
+        
+    }
+    .author{
+   gap: 0.4rem;
+    }
+    .related-post{
+        width: 100%;
+        width: 100%;
     }
 }
+/* @media screen and (max-width:1280px){
+    .single-post{
+        padding: 15vh 1.5rem;
+        grid-template-columns: 1fr;
+    }
+    .side-content{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .more-info{
+        display: none;
+    }
+} */
