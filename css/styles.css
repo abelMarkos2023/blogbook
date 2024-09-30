@@ -5,7 +5,8 @@
 
 
 .header{
-    height: 8vh;
+    height: 10vh;
+    overflow: hidden;
     background-color: #606c76;
     padding: 2.5rem;
     display: flex;
